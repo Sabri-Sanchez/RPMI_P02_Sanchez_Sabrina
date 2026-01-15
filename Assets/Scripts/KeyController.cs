@@ -16,10 +16,12 @@ public class KeyController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        inventory.key = inventory.key + 1;
-        scoreKeyText.SetText(inventory.key.ToString());
+        //inventory.key = inventory.key + 1;
+        //scoreKeyText.SetText(inventory.key.ToString()); estaba llamando otra vez a la llave y no debería, se comenta para que no de error
        
         print(inventory.key);
         llave.SetActive(false);
+
+        inventory.AddKey(1);
     }
 }

@@ -5,6 +5,6 @@ public class MenuController : MonoBehaviour
 {
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("AventurerosEsqueletos");
+        SceneManager.LoadScene("Aventureros Esqueletos");
     }
 }

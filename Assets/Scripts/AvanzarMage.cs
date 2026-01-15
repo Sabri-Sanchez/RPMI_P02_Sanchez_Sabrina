@@ -17,6 +17,8 @@ public class Avanzar : MonoBehaviour
 
     public Inventory inventory;
 
+    public Animator animator;
+
     void Start()
     {
         GameOverText.enabled = false;
@@ -69,8 +71,9 @@ public class Avanzar : MonoBehaviour
             {
                 print("Murió");
                 Instantiate(moneda, SpawnPoint.position, Quaternion.identity);
-                
-                Destroy(gameObject); //Destruye a Mage
+
+                animator.SetBool("Dead", true);
+                //Destroy(gameObject); //Destruye a Mage
             }
           }
     }
