@@ -98,6 +98,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CoinController
   inventory: {fileID: 0}
   moneda: {fileID: 3613861440901724337}
+  Mage: {fileID: 9057871048481000524, guid: fa258b383444fe442a6c705e66bfe42c, type: 3}
+  spawnMage: {fileID: 1648741640339711464, guid: ae25cc56cd066be46a9a7780759c4432, type: 3}
+  scoreText: {fileID: 0}
 --- !u!65 &6751224993146233452
 BoxCollider:
   m_ObjectHideFlags: 0

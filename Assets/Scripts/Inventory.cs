@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour
 {
@@ -25,5 +26,10 @@ public class Inventory : MonoBehaviour
     {
         key += keyToAdd;
         keyText.text = key.ToString();
+    }
+
+    public void LoadGameScene()
+    {
+        SceneManager.LoadScene("AventurerosEsqueletos");
     }
 }

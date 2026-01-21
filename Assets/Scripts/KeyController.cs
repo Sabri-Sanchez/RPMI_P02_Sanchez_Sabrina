@@ -5,6 +5,8 @@ public class KeyController : MonoBehaviour
 {
     public Inventory inventory;
     public GameObject llave;
+    public GameObject Skeleton;
+    public Transform spawnSkeleton;
 
     public TextMeshProUGUI scoreKeyText;
 
@@ -23,5 +25,6 @@ public class KeyController : MonoBehaviour
         llave.SetActive(false);
 
         inventory.AddKey(1);
+        Instantiate(Skeleton, spawnSkeleton.position, spawnSkeleton.rotation);
     }
 }

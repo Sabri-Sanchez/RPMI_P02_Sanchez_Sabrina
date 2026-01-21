@@ -7,6 +7,7 @@ public class Avanzar : MonoBehaviour
 {
     bool move = true;
     int vida = 100;
+    float muertetiempo = 3f;
     
 
     public GameObject moneda;
@@ -72,19 +73,32 @@ public class Avanzar : MonoBehaviour
                 print("Murió");
                 Instantiate(moneda, SpawnPoint.position, Quaternion.identity);
 
-                animator.SetBool("Dead", true);
-                //Destroy(gameObject); //Destruye a Mage
+                //animator.SetBool("Dead", true);
+                move = false;
+                animator.SetTrigger("Die");
+                Invoke(nameof(destroy), muertetiempo);
+               
+                
             }
           }
     }
+
+    public void destroy()
+    {
+            Destroy(gameObject); //Destruye a Mage
+    }  
+
+
+
          
-}            
-             
+    
+}
 
 
 
 
 
-          
-         
+
+
+
 
