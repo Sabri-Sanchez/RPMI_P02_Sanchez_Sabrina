@@ -7,13 +7,13 @@ public class Avanzar : MonoBehaviour
 {
     bool move = true;
     int vida = 100;
-    float muertetiempo = 3f;
-    
+    float muertetiempo = 2f;
+
 
     public GameObject moneda;
 
     public TextMeshProUGUI GameOverText;
-    
+
     public Transform SpawnPoint;
 
     public Inventory inventory;
@@ -29,9 +29,10 @@ public class Avanzar : MonoBehaviour
 
     void Update()
     {
-        if  (move == true)
+        if (move == true)
         {
             transform.Translate(0, 0, -0.005f, Space.World); //La Bruja avanza continuamente
+
 
             if (CompareTag("Player2"))
             {
@@ -44,7 +45,7 @@ public class Avanzar : MonoBehaviour
             }
         }
 
-    }   
+    }
 
 
     private void OnCollisionEnter(Collision collision)
@@ -54,19 +55,19 @@ public class Avanzar : MonoBehaviour
         if (collision.gameObject.CompareTag("Collectable")) //Bruja deja de avanzar cuando choca
         {
             move = false;
-            
+
             GameOverText.enabled = true;
 
         }
 
-          if (collision.gameObject.CompareTag("Flecha")) //Flechas restan vida y destruyen bruja
-          {
+        if (collision.gameObject.CompareTag("Flecha")) //Flechas restan vida y destruyen bruja
+        {
 
             if (vida > 20)
             {
                 vida = vida - 40;
                 print("Vida: " + vida);
-       
+
             }
             else
             {
@@ -76,22 +77,28 @@ public class Avanzar : MonoBehaviour
                 //animator.SetBool("Dead", true);
                 move = false;
                 animator.SetTrigger("Die");
+
+                //Invoke("destroy", 1);
                 Invoke(nameof(destroy), muertetiempo);
-               
-                
+
+
             }
-          }
+        }
     }
 
     public void destroy()
     {
-            Destroy(gameObject); //Destruye a Mage
-    }  
+        Destroy(gameObject); //Destruye a Mage
+    }
+
+    public void SpawnAnimationEnded()
+    {
+        move = false;
+    }
 
 
 
-         
-    
+
 }
 
 

@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: key_gold
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 848d4aa39fe52aa4a8bafaa29703e5f9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -94,6 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyController
   inventory: {fileID: 0}
   llave: {fileID: 3657275940213076799}
+  Skeleton: {fileID: 0}
+  spawnSkeleton: {fileID: 0}
   scoreKeyText: {fileID: 0}
 --- !u!65 &2864254106183342236
 BoxCollider:

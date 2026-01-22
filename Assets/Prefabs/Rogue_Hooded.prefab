@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f02b6a666162ce849a63c3a7b88106dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.64706504
+      value: 0.784
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f02b6a666162ce849a63c3a7b88106dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -97,6 +97,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f02b6a666162ce849a63c3a7b88106dc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5878444146360511884}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f02b6a666162ce849a63c3a7b88106dc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4674424325655761939}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f02b6a666162ce849a63c3a7b88106dc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5821609001905606385}
   m_SourcePrefab: {fileID: 100100000, guid: f02b6a666162ce849a63c3a7b88106dc, type: 3}
 --- !u!4 &57137844200145453 stripped
 Transform:
@@ -122,3 +128,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AdventureroController
   arrow: {fileID: 5707737009283395142, guid: 6da57b4bff031474d8b516028236cb9b, type: 3}
   spawnPoint: {fileID: 1699067879638590671}
+--- !u!95 &4674424325655761939
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828994648364570775}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5e8b3dbba84a724ba09aed6e15e7130, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &5821609001905606385
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828994648364570775}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.223523, y: 1.2909312, z: 21.819025}
+  m_Center: {x: 0.010873735, y: 0.6787586, z: 10.731257}

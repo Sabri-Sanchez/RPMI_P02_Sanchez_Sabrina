@@ -1026,7 +1026,7 @@ MonoBehaviour:
   llave: {fileID: 3657275940213076799, guid: 618b0794f6bd68e408311b8544022f53, type: 3}
   Skeleton: {fileID: 30750195279791585, guid: acc8101efaf01a142b75d3a0a8c2f5a3, type: 3}
   spawnSkeleton: {fileID: 1490367207566048523, guid: 0e0ef246d5af0974faa5a00dc71db6fa, type: 3}
-  scoreKeyText: {fileID: 0}
+  scoreKeyText: {fileID: 1538770268}
 --- !u!4 &124698789
 Transform:
   m_ObjectHideFlags: 0
@@ -6451,6 +6451,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 803592982482476891, guid: acc8101efaf01a142b75d3a0a8c2f5a3, type: 3}
   m_PrefabInstance: {fileID: 5227216982184473511}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &916638586 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2773791427748264800, guid: acc8101efaf01a142b75d3a0a8c2f5a3, type: 3}
+  m_PrefabInstance: {fileID: 5227216982184473511}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &918751603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8570,7 +8575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 57137844200145453, guid: ce8671de8d1647d4c875de342db3adaa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.64706504
+      value: 0.784
       objectReference: {fileID: 0}
     - target: {fileID: 57137844200145453, guid: ce8671de8d1647d4c875de342db3adaa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9161,11 +9166,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9300d2dd0ffab0741ae98c5b45d824ff, type: 3}
---- !u!95 &1312883771 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2573052476609448651, guid: fa258b383444fe442a6c705e66bfe42c, type: 3}
-  m_PrefabInstance: {fileID: 2980563956016168952}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1312883775 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8574806509235541750, guid: fa258b383444fe442a6c705e66bfe42c, type: 3}
@@ -15469,6 +15469,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 854870373919826178, guid: fa258b383444fe442a6c705e66bfe42c, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2461142710150966025, guid: fa258b383444fe442a6c705e66bfe42c, type: 3}
       propertyPath: inventory
       value: 
@@ -15551,7 +15555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1648741640339711464, guid: ae25cc56cd066be46a9a7780759c4432, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1648741640339711464, guid: ae25cc56cd066be46a9a7780759c4432, type: 3}
       propertyPath: m_LocalRotation.x
@@ -15559,7 +15563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1648741640339711464, guid: ae25cc56cd066be46a9a7780759c4432, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1648741640339711464, guid: ae25cc56cd066be46a9a7780759c4432, type: 3}
       propertyPath: m_LocalRotation.z
@@ -15571,7 +15575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1648741640339711464, guid: ae25cc56cd066be46a9a7780759c4432, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 1648741640339711464, guid: ae25cc56cd066be46a9a7780759c4432, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -15602,6 +15606,10 @@ PrefabInstance:
     - target: {fileID: 30750195279791585, guid: acc8101efaf01a142b75d3a0a8c2f5a3, type: 3}
       propertyPath: m_Name
       value: Skeleton_Warrior
+      objectReference: {fileID: 0}
+    - target: {fileID: 30750195279791585, guid: acc8101efaf01a142b75d3a0a8c2f5a3, type: 3}
+      propertyPath: m_TagString
+      value: Player2
       objectReference: {fileID: 0}
     - target: {fileID: 803592982482476891, guid: acc8101efaf01a142b75d3a0a8c2f5a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15646,7 +15654,7 @@ PrefabInstance:
     - target: {fileID: 1335077495371324897, guid: acc8101efaf01a142b75d3a0a8c2f5a3, type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 1312883771}
+      objectReference: {fileID: 916638586}
     - target: {fileID: 1335077495371324897, guid: acc8101efaf01a142b75d3a0a8c2f5a3, type: 3}
       propertyPath: inventory
       value: 
@@ -15655,10 +15663,26 @@ PrefabInstance:
       propertyPath: GameOverText
       value: 
       objectReference: {fileID: 1887095702}
+    - target: {fileID: 2773791427748264800, guid: acc8101efaf01a142b75d3a0a8c2f5a3, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 13a9e57cad569554faf955e1de35a87d, type: 2}
+    - target: {fileID: 3058645609868013737, guid: acc8101efaf01a142b75d3a0a8c2f5a3, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4258197255126693774, guid: acc8101efaf01a142b75d3a0a8c2f5a3, type: 3}
       propertyPath: llave
       value: 
       objectReference: {fileID: 3657275940213076799, guid: 618b0794f6bd68e408311b8544022f53, type: 3}
+    - target: {fileID: 4258197255126693774, guid: acc8101efaf01a142b75d3a0a8c2f5a3, type: 3}
+      propertyPath: scoreKeyText
+      value: 
+      objectReference: {fileID: 1538770268}
+    - target: {fileID: 4258197255126693774, guid: acc8101efaf01a142b75d3a0a8c2f5a3, type: 3}
+      propertyPath: spawnSkeleton
+      value: 
+      objectReference: {fileID: 1490367207566048523, guid: 0e0ef246d5af0974faa5a00dc71db6fa, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

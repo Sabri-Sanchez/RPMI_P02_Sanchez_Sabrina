@@ -152,7 +152,7 @@ MonoBehaviour:
   GameOverText: {fileID: 0}
   SpawnPoint: {fileID: 8447121503358806191}
   inventory: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 2773791427748264800}
 --- !u!54 &3058645609868013737
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -178,7 +178,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 32
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!95 &2773791427748264800
 Animator:
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyController
   inventory: {fileID: 0}
-  llave: {fileID: 0}
+  llave: {fileID: 3657275940213076799, guid: 618b0794f6bd68e408311b8544022f53, type: 3}
   Skeleton: {fileID: 30750195279791585}
   spawnSkeleton: {fileID: 1490367207566048523, guid: 0e0ef246d5af0974faa5a00dc71db6fa, type: 3}
   scoreKeyText: {fileID: 0}
