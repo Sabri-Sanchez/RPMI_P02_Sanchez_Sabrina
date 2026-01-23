@@ -16,7 +16,7 @@ public class AdventureroController : MonoBehaviour
         if (other.gameObject.CompareTag("Player")) 
         {
             //Comparar tags para saber si está vivo o muerto 
-            InvokeRepeating("InstantiateArrow", 0.1f, 0.1f);
+            InvokeRepeating("InstantiateArrow", 2, 3);
         }
         
     }
