@@ -4,37 +4,73 @@ public class AdventureroController : MonoBehaviour
 {
     public GameObject arrow;
     public Transform spawnPoint;
+    public Animator animator;
+
+    private bool EnemigoActivoTrigger;
 
     void Start()
     {
         //InvokeRepeating("InstantiateArrow", 2, 3);
     }
 
-    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player")) 
+        if (other.gameObject.CompareTag("Player"))
         {
-            //Comparar tags para saber si está vivo o muerto 
-            InvokeRepeating("InstantiateArrow", 2, 3);
+            EnemigoActivoTrigger = true;
+            //animator.SetTrigger("Shoot");
+
+            InvokeRepeating("InstantiateArrow", 2f, 3f);
+            InvokeRepeating("AnimacionDisparar", 0f, 3f);
+
+        }
+
+    }
+
+    //void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Player"))
+    //    {
+    //        EnemigoActivo = false;
+
+    //        CancelInvoke("InstantiateArrow");
+    //        CancelInvoke("AnimacionDisparar");
+    //    }
+
+    //}
+
+    public void StopActions() 
+    {
+        CancelInvoke("InstantiateArrow");
+        CancelInvoke("AnimacionDisparar");
+
+        EnemigoActivoTrigger = false;
+    }
+
+    public void Shoot()
+    {
+        InstantiateArrow();
+    }
+
+    private void InstantiateArrow()
+    {
+        if (!EnemigoActivoTrigger) return;
+        {
+          Instantiate(arrow, spawnPoint.position, spawnPoint.rotation);
         }
         
     }
 
-    private void OnTriggerExit(Collider other)
+    private void AnimacionDisparar()
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (!EnemigoActivoTrigger) return;
         {
-            CancelInvoke("InstantiateArrow");
+            animator.ResetTrigger("Shoot");
+            animator.SetTrigger("Shoot");
         }
-       
     }
 
-    private void InstantiateArrow() 
-    {
-        Instantiate(arrow, spawnPoint.position, spawnPoint.rotation);
-    
-
-
-    }
 }
+
+
+

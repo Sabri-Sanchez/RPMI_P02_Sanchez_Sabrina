@@ -20,6 +20,8 @@ public class Avanzar : MonoBehaviour
 
     public Animator animator;
 
+    public AdventureroController enemigo;
+
     void Start()
     {
         GameOverText.enabled = false;
@@ -78,7 +80,7 @@ public class Avanzar : MonoBehaviour
                 move = false;
                 animator.SetTrigger("Die");
 
-                //Invoke("destroy", 1);
+                //Invoke("destroy", 2f);
                 Invoke(nameof(destroy), muertetiempo);
 
 
@@ -88,6 +90,8 @@ public class Avanzar : MonoBehaviour
 
     public void destroy()
     {
+        enemigo.StopActions();
+
         Destroy(gameObject); //Destruye a Mage
     }
 

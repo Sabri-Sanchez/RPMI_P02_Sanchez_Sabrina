@@ -8613,6 +8613,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rogue_Hooded
       objectReference: {fileID: 0}
+    - target: {fileID: 5821609001905606385, guid: ce8671de8d1647d4c875de342db3adaa, type: 3}
+      propertyPath: m_Size.z
+      value: 19.041622
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821609001905606385, guid: ce8671de8d1647d4c875de342db3adaa, type: 3}
+      propertyPath: m_Center.z
+      value: 9.342556
+      objectReference: {fileID: 0}
+    - target: {fileID: 5878444146360511884, guid: ce8671de8d1647d4c875de342db3adaa, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2005873212}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14400,6 +14412,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 318c1ed3876247d4598749b4281bd1d0, type: 3}
   m_PrefabInstance: {fileID: 1805021365}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2005873212 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4674424325655761939, guid: ce8671de8d1647d4c875de342db3adaa, type: 3}
+  m_PrefabInstance: {fileID: 1250891800}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2023205029
 PrefabInstance:
