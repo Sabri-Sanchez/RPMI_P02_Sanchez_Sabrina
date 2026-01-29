@@ -88,6 +88,10 @@ PrefabInstance:
       value: Mage
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4540dfa6b7f64d34f878cba9b4a3a1a5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4540dfa6b7f64d34f878cba9b4a3a1a5, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -141,6 +145,7 @@ MonoBehaviour:
   SpawnPoint: {fileID: 6094471106022574160}
   inventory: {fileID: 0}
   animator: {fileID: 2573052476609448651}
+  enemigo: {fileID: 0}
 --- !u!65 &5540546380990738294
 BoxCollider:
   m_ObjectHideFlags: 0

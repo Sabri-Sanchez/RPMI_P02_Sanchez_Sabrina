@@ -36,12 +36,12 @@ public class Avanzar : MonoBehaviour
             transform.Translate(0, 0, -0.005f, Space.World); //La Bruja avanza continuamente
 
 
-            if (CompareTag("Player2"))
+            if (CompareTag("Player2")) //El esqueleto
             {
                 transform.Translate(0, 0, -0.002f, Space.World);
             }
 
-            if (CompareTag("Player1"))
+            if (CompareTag("Player1")) //Otro personaje
             {
                 transform.Translate(0, 0, -0.001f, Space.World);
             }
@@ -50,7 +50,7 @@ public class Avanzar : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision) //Cuando entra en el trigger collision
     {
 
 
@@ -78,7 +78,7 @@ public class Avanzar : MonoBehaviour
 
                 //animator.SetBool("Dead", true);
                 move = false;
-                animator.SetTrigger("Die");
+                //animator.SetTrigger("Die");
 
                 //Invoke("destroy", 2f);
                 Invoke(nameof(destroy), muertetiempo);
@@ -90,9 +90,8 @@ public class Avanzar : MonoBehaviour
 
     public void destroy()
     {
-        enemigo.StopActions();
-
         Destroy(gameObject); //Destruye a Mage
+        
     }
 
     public void SpawnAnimationEnded()
