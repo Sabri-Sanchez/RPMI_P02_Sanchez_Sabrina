@@ -7,7 +7,7 @@ public class Avanzar : MonoBehaviour
 {
     bool move = true;
     int vida = 100;
-    float muertetiempo = 2f;
+    float muertetiempo = 1f;
 
 
     public GameObject moneda;
@@ -33,8 +33,7 @@ public class Avanzar : MonoBehaviour
     {
         if (move == true)
         {
-            transform.Translate(0, 0, -0.005f, Space.World); //La Bruja avanza continuamente
-
+            transform.Translate(0, 0, -0.011f, Space.World); //La Bruja avanza continuamente
 
             if (CompareTag("Player2")) //El esqueleto
             {
@@ -65,33 +64,35 @@ public class Avanzar : MonoBehaviour
         if (collision.gameObject.CompareTag("Flecha")) //Flechas restan vida y destruyen bruja
         {
 
-            if (vida > 20)
+            if (vida > 41)
             {
-                vida = vida - 40;
+                animator.SetBool("RecibeFlecha", true);
+
+                vida = vida - 60;
                 print("Vida: " + vida);
 
             }
             else
             {
                 print("Murió");
+                animator.SetBool("Dead", true);//Animación de la bruja muriendo
+
                 Instantiate(moneda, SpawnPoint.position, Quaternion.identity);
-
-                //animator.SetBool("Dead", true);
                 move = false;
-                //animator.SetTrigger("Die");
 
-                //Invoke("destroy", 2f);
                 Invoke(nameof(destroy), muertetiempo);
 
-
             }
+
         }
     }
 
     public void destroy()
     {
+        //Invoke("destroy", 2f); //Tiempo que tarda en morir
         Destroy(gameObject); //Destruye a Mage
-        
+
+
     }
 
     public void SpawnAnimationEnded()
@@ -99,9 +100,15 @@ public class Avanzar : MonoBehaviour
         move = false;
     }
 
+    public void RecibeFlecha()
+    {
+        move = true;
+    }
 
-
-
+    public void Camina()
+    {
+        animator.SetBool("Camina", true);
+    }
 }
 
 

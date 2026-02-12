@@ -33,16 +33,16 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 2562954838814159048}
-    m_Position: {x: 600, y: 60, z: 0}
+    m_Position: {x: 580, y: -50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3845582531340285312}
-    m_Position: {x: 450, y: -110, z: 0}
+    m_Position: {x: 410, y: -220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3316933399015259560}
-    m_Position: {x: 620, y: 400, z: 0}
+    m_Position: {x: 380, y: 290, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1449142338564330361}
-    m_Position: {x: 120, y: 110, z: 0}
+    m_Position: {x: 170, y: -50, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 8982200466254989350}
@@ -51,7 +51,7 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 380, y: 260, z: 0}
+  m_AnyStatePosition: {x: 400, y: 110, z: 0}
   m_EntryPosition: {x: 60, y: -220, z: 0}
   m_ExitPosition: {x: 800, y: -320, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -101,7 +101,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: -1923750366902163184, guid: 78f765bf6dae5ee43af6cd2fc39470a3, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -128,7 +128,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 2825485217256495706, guid: 78f765bf6dae5ee43af6cd2fc39470a3, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -145,12 +145,6 @@ AnimatorController:
   m_AnimatorParameters:
   - m_Name: Disparo
     m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: DetenerAni
-    m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -175,7 +169,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Interact
+  m_Name: MovTirarFlecha
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

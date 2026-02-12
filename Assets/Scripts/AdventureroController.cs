@@ -10,32 +10,55 @@ public class AdventureroController : MonoBehaviour
 
     private bool shooting;
 
+    public float distancia;
+
     void Start()
     {
         //InvokeRepeating("InstantiateArrow", 2, 3);
         shooting = false;
         movimiento = false;
 
-        //distancia = GetComponent<BoxCollider>().size.z; //Busca un componente del tipo que yo le diga, después lo que es el size para saber la distancia en la que quiero enviar el Raycast
+        distancia = GetComponent<BoxCollider>().size.z; //Busca un componente del tipo que yo le diga, después lo que es el size para saber la distancia en la que quiero enviar el Raycast
     }
 
     private void Update()
     {
-        if (shooting) // es igual a if shooting == true / !shooting es negativo
+        if (shooting) //es igual a if shooting == true / !shooting es negativo
         {
+            //bool enemyInFront = Physics.Raycast(spawnPoint.position, transform.forward, float.MaxValue, LayerMask.GetMask("Enemigos")); //Como se usa para una sola funcion puedo crear acá la booleana, guarda si el Raycast choca o no
+            //if (enemyInFront)
+            //{
+            //    animator.SetBool("Disparo", false); //para que deje de disparar mientras la bruja está muerta y hasta que vuelta a instanciarse
+
+            //    shooting = false;
+            //    movimiento = false;
+
+            //    CancelInvoke("InstantiateArrow");
+            //}
+            //else
+            //{
+            //    shooting = true;                
+
+            //    InvokeRepeating("InstantiateArrow", 2f, 3f);
+
+            //    animator.SetBool("Disparo", true);
+            //}
+
+
             if (!Physics.Raycast(spawnPoint.position, transform.forward, float.MaxValue, LayerMask.GetMask("Enemigos")))
-            {
-                print("logica del raycast para detener");
-                animator.ResetTrigger("DetenerAni");
-                animator.SetTrigger("DetenerAni");
+                //Que tenga en cuenta las capas donde está este nombre, la capa enemigos para añadir propiedades en el motor de física
+
+            {   //si no tiene nada adelante en cierta posicion, dirección, distancia y capa, deja de disparar
+                print("logica del Raycast para detener");
+
+                animator.SetBool("Disparo", false); //para que deje de disparar mientras la bruja está muerta y hasta que vuelta a instanciarse
+
                 shooting = false;
                 movimiento = false;
 
-                //animator.SetBool para que deje de disparar mientras la bruja está muerta y hasta que vuelta a instanciarse
-
                 CancelInvoke("InstantiateArrow");
-                //  CancelInvoke("Disparo");
-                
+                //CancelInvoke("Disparo");
+
             }
 
         }
@@ -44,7 +67,7 @@ public class AdventureroController : MonoBehaviour
     private void OnDrawGizmos() //Para que vea en el inspector lo que se esta haciendo en el elemento seleccionado
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(spawnPoint.position, transform.forward);
+        Gizmos.DrawRay(spawnPoint.position, distancia * transform.forward);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -59,12 +82,13 @@ public class AdventureroController : MonoBehaviour
                 InvokeRepeating("InstantiateArrow", 2f, 3f);
                 //InvokeRepeating("Disparo", 0f, 3f);
 
-                animator.ResetTrigger("Disparo");
-                animator.SetTrigger("Disparo");
+                animator.SetBool("Disparo", true);
+
             }
             else
             {
                 movimiento = false;
+                animator.SetBool("Disparo", false);
             }
 
 
@@ -74,9 +98,12 @@ public class AdventureroController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        print("salgo del boxcollider en el ontriggerexit");
-        CancelInvoke("InstanciateArrow");
-        //CancelInvoke("Disparo");
+        if (other.gameObject.CompareTag("Player"))
+        {
+            print("salgo del boxcollider en el ontriggerexit");
+            CancelInvoke("InstanciateArrow");
+            //CancelInvoke("Disparo");
+        }
     }
 
 
@@ -97,11 +124,6 @@ public class AdventureroController : MonoBehaviour
     public void Disparo() //Nombre del evento de disparar
     {
         movimiento = true;
-    }
-
-    public void DetenerAni() //Nombre del evento de disparar
-    {
-        movimiento = false;
     }
 
 }
