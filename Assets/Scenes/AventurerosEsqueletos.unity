@@ -325,6 +325,7 @@ MonoBehaviour:
   SpawnPoint: {fileID: 0}
   inventory: {fileID: 1103072252}
   animator: {fileID: 0}
+  enemigo: {fileID: 0}
 --- !u!95 &25263059
 Animator:
   serializedVersion: 7
@@ -13586,7 +13587,7 @@ MonoBehaviour:
   moneda: {fileID: 0}
   Mage: {fileID: 9057871048481000524, guid: fa258b383444fe442a6c705e66bfe42c, type: 3}
   spawnMage: {fileID: 1648741640339711464, guid: ae25cc56cd066be46a9a7780759c4432, type: 3}
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 809149241}
 --- !u!4 &1858647879
 Transform:
   m_ObjectHideFlags: 0

@@ -25,13 +25,17 @@ public class AdventureroController : MonoBehaviour
         {
             if (!Physics.Raycast(spawnPoint.position, transform.forward, float.MaxValue, LayerMask.GetMask("Enemigos")))
             {
+                print("logica del raycast para detener");
+                animator.ResetTrigger("DetenerAni");
+                animator.SetTrigger("DetenerAni");
                 shooting = false;
                 movimiento = false;
 
                 //animator.SetBool para que deje de disparar mientras la bruja está muerta y hasta que vuelta a instanciarse
 
                 CancelInvoke("InstantiateArrow");
-                CancelInvoke("MovDisparar");
+                //  CancelInvoke("Disparo");
+                
             }
 
         }
@@ -50,12 +54,15 @@ public class AdventureroController : MonoBehaviour
             if (shooting == false)  //Se asegura que el héroe no duplica el disparo, comprueba si es falsa para ponerla en true. Es para que no se haga dos veces
             {
                 shooting = true;
-                movimiento = true;
+                //movimiento = true;
 
                 InvokeRepeating("InstantiateArrow", 2f, 3f);
-                InvokeRepeating("MovDisparar", 0f, 3f);
+                //InvokeRepeating("Disparo", 0f, 3f);
+
+                animator.ResetTrigger("Disparo");
+                animator.SetTrigger("Disparo");
             }
-            else 
+            else
             {
                 movimiento = false;
             }
@@ -67,8 +74,9 @@ public class AdventureroController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        print("salgo del boxcollider en el ontriggerexit");
         CancelInvoke("InstanciateArrow");
-        CancelInvoke("MovDisparar");
+        //CancelInvoke("Disparo");
     }
 
 
@@ -86,9 +94,14 @@ public class AdventureroController : MonoBehaviour
         movimiento = false;
     }
 
-    public void MovDisparar() //Nombre del evento de disparar
+    public void Disparo() //Nombre del evento de disparar
     {
         movimiento = true;
+    }
+
+    public void DetenerAni() //Nombre del evento de disparar
+    {
+        movimiento = false;
     }
 
 }
