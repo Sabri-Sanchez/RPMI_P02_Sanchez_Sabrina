@@ -297,7 +297,7 @@ ModelImporter:
       - time: 1
         functionName: Camina
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 9057871048481000524, guid: fa258b383444fe442a6c705e66bfe42c, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

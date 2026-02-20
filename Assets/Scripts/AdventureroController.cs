@@ -49,7 +49,7 @@ public class AdventureroController : MonoBehaviour
                 //Que tenga en cuenta las capas donde está este nombre, la capa enemigos para añadir propiedades en el motor de física
 
             {   //si no tiene nada adelante en cierta posicion, dirección, distancia y capa, deja de disparar
-                print("logica del Raycast para detener");
+                print("RaycastTiraFlecha para detener disparo");
 
                 animator.SetBool("Disparo", false); //para que deje de disparar mientras la bruja está muerta y hasta que vuelta a instanciarse
 

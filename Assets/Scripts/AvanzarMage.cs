@@ -33,6 +33,9 @@ public class Avanzar : MonoBehaviour
     {
         if (move == true)
         {
+            bool enemyInFront = Physics.Raycast(SpawnPoint.position, transform.forward, float.MaxValue, LayerMask.GetMask("Player"));
+
+
             transform.Translate(0, 0, -0.011f, Space.World); //La Bruja avanza continuamente
 
             if (CompareTag("Player2")) //El esqueleto
@@ -44,7 +47,22 @@ public class Avanzar : MonoBehaviour
             {
                 transform.Translate(0, 0, -0.001f, Space.World);
             }
+
+
+            if (enemyInFront)
+            {
+                move = false;
+
+                animator.SetBool("Golpear", true); //para que Mage golpeé cuando tenga al TiraFlecha adelante
+            }
+            else
+            {
+                move = true;
+            }
+
+
         }
+
 
     }
 
@@ -64,27 +82,33 @@ public class Avanzar : MonoBehaviour
         if (collision.gameObject.CompareTag("Flecha")) //Flechas restan vida y destruyen bruja
         {
 
-            if (vida > 41)
+            if (vida > 21)
             {
-                animator.SetBool("RecibeFlecha", true);
 
-                vida = vida - 60;
+
+                vida = vida - 20;
                 print("Vida: " + vida);
+
+                animator.SetBool("RecibeFlecha", true);
 
             }
             else
             {
                 print("Murió");
                 animator.SetBool("Dead", true);//Animación de la bruja muriendo
+                move = false;
 
                 Instantiate(moneda, SpawnPoint.position, Quaternion.identity);
-                move = false;
+
 
                 Invoke(nameof(destroy), muertetiempo);
 
             }
 
         }
+
+
+
     }
 
     public void destroy()
@@ -102,8 +126,13 @@ public class Avanzar : MonoBehaviour
 
     public void RecibeFlecha()
     {
-        move = true;
+        move = false;
     }
+
+    //public void RecibeFlechaEnded();
+    //{
+    //  move = false;
+    //}
 
     public void Camina()
     {
