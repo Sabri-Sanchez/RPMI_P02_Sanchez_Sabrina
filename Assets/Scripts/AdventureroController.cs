@@ -57,7 +57,6 @@ public class AdventureroController : MonoBehaviour
                 movimiento = false;
 
                 CancelInvoke("InstantiateArrow");
-                //CancelInvoke("Disparo");
 
             }
 

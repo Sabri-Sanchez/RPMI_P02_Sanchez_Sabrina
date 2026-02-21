@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using TMPro;
 
-public class Avanzar : MonoBehaviour
+public class AvanzarMage : MonoBehaviour
 {
     bool move = true;
     int vida = 100;
@@ -22,18 +22,36 @@ public class Avanzar : MonoBehaviour
 
     public AdventureroController enemigo;
 
+    public float distancia;
+    bool enemyInFront = false;
+
+    //float rayDistance = 20f;
+
+
     void Start()
     {
         GameOverText.enabled = false;
 
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+
+        distancia = GetComponent<BoxCollider>().size.z;
     }
 
     void Update()
     {
         if (move == true)
         {
-            bool enemyInFront = Physics.Raycast(SpawnPoint.position, transform.forward, float.MaxValue, LayerMask.GetMask("Player"));
+            if(Physics.Raycast(SpawnPoint.position, transform.forward, distancia, LayerMask.GetMask("Heroes")))
+            {
+                enemyInFront = true;
+            }
+
+
+            // Raycast hacia adelante
+
+
+
+
 
 
             transform.Translate(0, 0, -0.011f, Space.World); //La Bruja avanza continuamente
@@ -51,6 +69,7 @@ public class Avanzar : MonoBehaviour
 
             if (enemyInFront)
             {
+                print("tengo que frenar");
                 move = false;
 
                 animator.SetBool("Golpear", true); //para que Mage golpeé cuando tenga al TiraFlecha adelante
@@ -64,6 +83,12 @@ public class Avanzar : MonoBehaviour
         }
 
 
+    }
+
+    private void OnDrawGizmos() //Para que vea en el inspector lo que se esta haciendo en el elemento seleccionado
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(SpawnPoint.position, distancia * transform.forward);
     }
 
 
@@ -90,6 +115,7 @@ public class Avanzar : MonoBehaviour
                 print("Vida: " + vida);
 
                 animator.SetBool("RecibeFlecha", true);
+                
 
             }
             else
@@ -129,10 +155,10 @@ public class Avanzar : MonoBehaviour
         move = false;
     }
 
-    //public void RecibeFlechaEnded();
-    //{
-    //  move = false;
-    //}
+    public void RecibeFlechaEnded()
+    {
+      move = false;
+    }
 
     public void Camina()
     {
