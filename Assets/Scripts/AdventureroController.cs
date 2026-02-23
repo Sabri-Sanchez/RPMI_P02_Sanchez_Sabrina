@@ -25,25 +25,6 @@ public class AdventureroController : MonoBehaviour
     {
         if (shooting) //es igual a if shooting == true / !shooting es negativo
         {
-            //bool enemyInFront = Physics.Raycast(spawnPoint.position, transform.forward, float.MaxValue, LayerMask.GetMask("Enemigos")); //Como se usa para una sola funcion puedo crear acá la booleana, guarda si el Raycast choca o no
-            //if (enemyInFront)
-            //{
-            //    animator.SetBool("Disparo", false); //para que deje de disparar mientras la bruja está muerta y hasta que vuelta a instanciarse
-
-            //    shooting = false;
-            //    movimiento = false;
-
-            //    CancelInvoke("InstantiateArrow");
-            //}
-            //else
-            //{
-            //    shooting = true;                
-
-            //    InvokeRepeating("InstantiateArrow", 2f, 3f);
-
-            //    animator.SetBool("Disparo", true);
-            //}
-
 
             if (!Physics.Raycast(spawnPoint.position, transform.forward, float.MaxValue, LayerMask.GetMask("Enemigos")))
                 //Que tenga en cuenta las capas donde está este nombre, la capa enemigos para añadir propiedades en el motor de física
@@ -57,6 +38,7 @@ public class AdventureroController : MonoBehaviour
                 movimiento = false;
 
                 CancelInvoke("InstantiateArrow");
+
 
             }
 
@@ -101,7 +83,6 @@ public class AdventureroController : MonoBehaviour
         {
             print("salgo del boxcollider en el ontriggerexit");
             CancelInvoke("InstanciateArrow");
-            //CancelInvoke("Disparo");
         }
     }
 

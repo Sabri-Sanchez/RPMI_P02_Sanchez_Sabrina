@@ -41,17 +41,19 @@ public class AvanzarMage : MonoBehaviour
     {
         if (move == true)
         {
-            if(Physics.Raycast(SpawnPoint.position, transform.forward, distancia, LayerMask.GetMask("Heroes")))
+            RaycastHit hitInfo; //Es para saber si chocó con algo para saberlo antes del if
+
+            if (Physics.Raycast(SpawnPoint.position, transform.forward, out hitInfo, distancia, LayerMask.GetMask("Heroes")))
             {
-                enemyInFront = true;
+                if (hitInfo.collider != null) 
+                {
+                    enemyInFront = true;
+
+                    enemigo = hitInfo.collider.GetComponent<AdventureroController>();
+                }
+                    
+                   
             }
-
-
-            // Raycast hacia adelante
-
-
-
-
 
 
             transform.Translate(0, 0, -0.011f, Space.World); //La Bruja avanza continuamente
@@ -121,11 +123,11 @@ public class AvanzarMage : MonoBehaviour
             else
             {
                 print("Murió");
-                animator.SetBool("Dead", true);//Animación de la bruja muriendo
                 move = false;
 
+                animator.SetBool("Dead", true);//Animación de la bruja muriendo
+                
                 Instantiate(moneda, SpawnPoint.position, Quaternion.identity);
-
 
                 Invoke(nameof(destroy), muertetiempo);
 
@@ -157,7 +159,7 @@ public class AvanzarMage : MonoBehaviour
 
     public void RecibeFlechaEnded()
     {
-      move = false;
+      move = true;
     }
 
     public void Camina()
