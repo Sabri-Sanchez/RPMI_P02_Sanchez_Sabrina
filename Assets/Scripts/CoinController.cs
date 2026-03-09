@@ -36,10 +36,10 @@ public class CoinController : MonoBehaviour
         moneda.SetActive(false); // Genera mas basura pero en juegos pequeños está bien
         //Destroy(moneda); para que sufra menos la memoria
 
-        inventory.AddCoins(1); //Es llamar para que siempre se pueda actualizar en la interfaz llamando a la función desde el inventario
+        inventory.AddCoins(-3); //Es llamar para que siempre se pueda actualizar en la interfaz llamando a la función desde el inventario
         Instantiate(Mage, spawnMage.position, spawnMage.rotation);
 
-    } // PROBLEMA: problema que no se actualiza las monedas hasta que no se vuelva a hacer click
+    }
 
 
 }

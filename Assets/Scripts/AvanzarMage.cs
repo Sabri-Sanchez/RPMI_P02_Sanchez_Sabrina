@@ -61,12 +61,15 @@ public class AvanzarMage : MonoBehaviour
             if (CompareTag("Player2")) //El esqueleto
             {
                 transform.Translate(0, 0, -0.002f, Space.World);
-            }
+            } else {
 
             if (CompareTag("Player1")) //Otro personaje
-            {
+               {
                 transform.Translate(0, 0, -0.001f, Space.World);
+               }
+
             }
+
 
 
             if (enemyInFront)

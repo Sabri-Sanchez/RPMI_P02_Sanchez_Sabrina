@@ -24,7 +24,7 @@ public class KeyController : MonoBehaviour
         print(inventory.key);
         llave.SetActive(false);
 
-        inventory.AddKey(1);
+        inventory.AddKey(-2);
         Instantiate(Skeleton, spawnSkeleton.position, spawnSkeleton.rotation);
     }
 }
